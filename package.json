@@ -7,10 +7,17 @@
     "@sap/cds": "^10"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^3"
+    "@cap-js/cds-test": "^1.0.2",
+    "@cap-js/sqlite": "^3",
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "test": "node --test",
+    "lint": "eslint .",
+    "watch": "cds watch",
+    "mcp:card": "cds compile srv -2 mcp"
   },
   "private": true,
   "cds": {

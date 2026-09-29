@@ -1,0 +1,16 @@
+sku;name;category;status;setupComplete
+HP-100;Trailhead Daypack 20L;Packs;Active;true
+HP-200;Summit Hiking Pack 45L;Packs;Active;true
+HP-300;Expedition Pack 65L;Packs;Active;true
+TN-100;Ridge 2-Person Tent;Tents;Active;true
+TN-200;Basecamp 4-Person Tent;Tents;Active;true
+TN-300;Ultralight Bivy Shelter;Tents;Discontinued;true
+SB-100;Alpine Sleeping Bag 20F;Sleeping;Active;true
+SB-200;Summer Sleeping Bag 40F;Sleeping;Active;true
+SP-100;Insulated Sleeping Pad;Sleeping;Active;true
+CK-100;Compact Camp Stove;Cooking;Active;true
+CK-200;Titanium Cook Set;Cooking;Active;true
+CK-300;Fuel Canister 230g;Cooking;Active;true
+LT-100;Headlamp 350 Lumen;Lighting;Active;true
+LT-200;Rechargeable Lantern;Lighting;Active;true
+LT-300;Solar Lantern Pro;Lighting;Active;false
