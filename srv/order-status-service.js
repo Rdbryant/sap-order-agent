@@ -16,7 +16,10 @@ const addDays = (isoDate, days) => {
   return d.toISOString().slice(0, 10)
 }
 
-const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
+/** True for a real calendar date written as YYYY-MM-DD (2026-02-31 is not) */
+const isIsoDate = value =>
+  /^\d{4}-\d{2}-\d{2}$/.test(value ?? '') && !isNaN(Date.parse(value)) &&
+  new Date(`${value}T00:00:00Z`).toISOString().startsWith(value)
 const normalize = value => String(value ?? '').trim().toUpperCase()
 
 export default class OrderStatusService extends cds.ApplicationService {
@@ -107,7 +110,7 @@ export default class OrderStatusService extends cds.ApplicationService {
     this.on('channelSummary', async req => {
       const { fromDate, toDate } = req.data
       for (const [name, value] of [['From date', fromDate], ['To date', toDate]]) {
-        if (!ISO_DATE.test(value ?? '') || isNaN(Date.parse(value)))
+        if (!isIsoDate(value))
           return req.reject(400, `${name} must be a date written as YYYY-MM-DD, for example 2026-09-21.`)
       }
       if (fromDate > toDate) return req.reject(400, `From date ${fromDate} is after to date ${toDate}. Swap them or pick a different range.`)
