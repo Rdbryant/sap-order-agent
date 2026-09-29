@@ -23,6 +23,16 @@
   "cds": {
     "mcp": {
       "per_action_tool": true
+    },
+    "[development]": {
+      "app": {
+        "asOfDate": "2026-09-30"
+      }
+    },
+    "[test]": {
+      "app": {
+        "asOfDate": "2026-09-30"
+      }
     }
   },
   "description": "Read-only order status agent built with SAP CAP and exposed to AI assistants over MCP (demo project, fictional data)"
