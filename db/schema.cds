@@ -90,6 +90,8 @@ entity Inventory {
       reorderPoint : Integer default 0;
       /** Units free to promise to new orders (on hand minus reserved) */
       available    : Integer = onHand - reserved;
+      /** True when available stock is below the reorder point */
+      belowReorderPoint : Boolean = (onHand - reserved) < reorderPoint;
 }
 
 /** A customer. Only name and city are kept here; no contact details */
