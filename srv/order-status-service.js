@@ -135,6 +135,20 @@ export default class OrderStatusService extends cds.ApplicationService {
       }))
     })
 
+    // CAP leaves input validation messages (like ASSERT_MANDATORY) empty until the OData
+    // adapter localizes them. MCP tools call the service directly and pass err.message to
+    // the AI, so fill in the message and name the parameter using its description.
+    this.on('error', (err, req) => {
+      for (const e of err.details ?? [err]) {
+        if (e.message || typeof e.code !== 'string') continue
+        const text = cds.i18n.messages.at(e.code, req?.locale, e.args)
+        if (!text) continue
+        const param = this.actions[req?.event]?.params?.[e.target]
+          ?? Object.values(this.actions).map(a => a.params?.[e.target]).find(Boolean)
+        e.message = param?.doc ? `${text.replace(/\.$/, '')}: ${param.doc}.` : text
+      }
+    })
+
     return super.init()
   }
 }
