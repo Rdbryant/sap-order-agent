@@ -4,7 +4,7 @@ Fifteen questions an operations person might ask the agent, the tool(s) that sho
 
 All answers assume the as-of date **2026-09-30** (a Wednesday), which is fixed in the `development` and `test` profiles. "Last week" is therefore Monday 2026-09-21 to Sunday 2026-09-27.
 
-Use this list to check the agent by hand in Claude Code (see the README). `test/questions.test.js` checks that the list has 15 questions and that every tool named in the **Tools** column exists in the MCP server's `tools/list`. The expected answers are checked against the same seed data in `test/order-status-service.test.js` and `test/mcp-protocol.test.js`.
+Use this list to check the agent by hand in Claude Code (see the README). All 15 were checked by hand in Claude Code on 2026-09-30 and matched; screenshots of questions 4 and 14 are in the README. `test/questions.test.js` checks that the list has 15 questions and that every tool named in the **Tools** column exists in the MCP server's `tools/list`. The expected answers are checked against the same seed data in `test/order-status-service.test.js` and `test/mcp-protocol.test.js`.
 
 ## Purpose-built tools
 

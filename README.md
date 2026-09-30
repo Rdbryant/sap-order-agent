@@ -6,6 +6,18 @@ A read-only AI agent that answers order, inventory and shipment questions ("Wher
 
 > **All data is fictional.** The company, customers, products, carriers and orders are made up for this demo.
 
+## Demo
+
+Asked in Claude Code, connected to the local service over MCP.
+
+**Finding orders that need attention.** Claude picks `findOrdersNeedingAttention` and explains the result:
+
+![Claude Code answering "Which orders are late or on hold?" with a table of five orders from the findOrdersNeedingAttention tool: three late and two on hold, most urgent first](docs/images/late-orders.png)
+
+**Declining a change.** The service is read-only, so Claude looks the order up and explains why it can't cancel it:
+
+![Claude Code answering "Cancel order SO-1010." by saying the service is read-only and the order was already delivered on Sept 16, and suggesting a return through the operations team](docs/images/cancel-order.png)
+
 ## Architecture
 
 ```mermaid
