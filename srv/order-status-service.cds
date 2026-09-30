@@ -5,6 +5,7 @@ using { orderagent as db } from '../db/schema';
 @mcp
 @mcp.instructions: 'You answer questions about sales orders, stock and shipments for an outdoor gear company. All data is read-only: you cannot create, change, cancel or ship anything, so if someone asks for a change, say so and suggest they contact the operations team. Prefer the purpose-built tools: getOrderStatus for one order, findOrdersNeedingAttention for late or on-hold orders, checkStock for one product, listLowStock for what needs reordering, and channelSummary for sales by channel over a date range. Only use describe and query for questions these tools do not cover, such as listing orders for one customer or finding products by name. Dates are ISO dates (YYYY-MM-DD) and amounts are in the order currency (USD). Customer contact details are not available.'
 @readonly
+@requires: 'OrderViewer'
 service OrderStatusService {
 
   // ---------------------------------------------------------------------------

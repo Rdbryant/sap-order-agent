@@ -27,11 +27,43 @@
     "[development]": {
       "app": {
         "asOfDate": "2026-09-30"
+      },
+      "requires": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "*": false,
+            "alice": {
+              "roles": [
+                "OrderViewer"
+              ]
+            },
+            "bob": {
+              "roles": []
+            }
+          }
+        }
       }
     },
     "[test]": {
       "app": {
         "asOfDate": "2026-09-30"
+      },
+      "requires": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "*": false,
+            "alice": {
+              "roles": [
+                "OrderViewer"
+              ]
+            },
+            "bob": {
+              "roles": []
+            }
+          }
+        }
       }
     }
   },

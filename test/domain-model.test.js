@@ -1,6 +1,7 @@
 import cds from '@sap/cds'
 
-const { GET, expect } = cds.test(import.meta.dirname + '/..')
+const { GET, expect, defaults } = cds.test(import.meta.dirname + '/..')
+defaults.auth = { username: 'alice', password: '' }
 
 const AS_OF = '2026-09-30'
 
