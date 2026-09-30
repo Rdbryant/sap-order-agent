@@ -202,6 +202,13 @@ describe('OrderStatusService functions', () => {
       ])
     })
 
+    it('summarizes the whole month', async () => {
+      const { value } = await fn(`channelSummary(fromDate=2026-09-01,toDate=2026-09-30)`)
+      expect(value.map(r => [r.channel, r.orderCount, r.cancelledCount, r.revenue])).to.deep.equal([
+        ['MKT', 11, 0, 1542], ['RTL', 7, 0, 4498], ['WEB', 22, 2, 3175],
+      ])
+    })
+
     it('includes orders on both boundary dates', async () => {
       const { value } = await fn(`channelSummary(fromDate=2026-09-01,toDate=2026-09-01)`)
       expect(value.map(r => [r.channel, r.orderCount])).to.deep.equal([['MKT', 1], ['RTL', 0], ['WEB', 1]])
