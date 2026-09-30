@@ -16,7 +16,7 @@
   "scripts": {
     "start": "cds-serve",
     "test": "node --test",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "watch": "cds watch",
     "mcp:card": "cds compile srv -2 mcp"
   },
