@@ -9,13 +9,14 @@
   "devDependencies": {
     "@cap-js/cds-test": "^1.0.2",
     "@cap-js/sqlite": "^3",
-    "@eslint/js": "^9.39.5",
-    "eslint": "^9.39.5"
+    "@eslint/js": "^10.0.0",
+    "@sap/cds-dk": "^10.1.0",
+    "eslint": "^10.11.0"
   },
   "scripts": {
     "start": "cds-serve",
     "test": "node --test",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "watch": "cds watch",
     "mcp:card": "cds compile srv -2 mcp"
   },
